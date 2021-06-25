@@ -2,16 +2,20 @@ package com.demo.springsecurity.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /*
@@ -32,7 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
     }
 
     /*
@@ -44,13 +48,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests()
-                .antMatchers("/r/r1").hasAuthority("p1") // /r/r1 必须有 p1 的权限
+        http.csrf().disable()
+                .authorizeRequests()
+//                .antMatchers("/r/r1").hasAuthority("p1") // /r/r1 必须有 p1 的权限, 在方法中使用了基于方法的权限 @PreAuthorize 所以注释调这里基于 url 的权限
+//                .antMatchers("/r/r2").hasAuthority("p2") // /r/r1 必须有 p1 的权限
                 .antMatchers("/r/**")
                 .authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin() // 支持form 表单登陆
-                .successForwardUrl("/login‐success"); // 登陆成功后跳转到URI /login‐success
+                .loginPage("/login-view") // 登陆页面
+                .loginProcessingUrl("/login") // 指定登录处理的URL，也就是用户名、密码表单提交的目的路径
+                .successForwardUrl("/login‐success") // 登陆成功后跳转到URI /login‐success
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
+
     }
 }
