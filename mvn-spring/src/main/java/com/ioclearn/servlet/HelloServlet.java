@@ -1,9 +1,8 @@
-package com.learn.servlet;
+package com.ioclearn.servlet;
 
-import com.learn.service.HelloService;
-import com.learn.service.impl.HelloServiceImpl;
+import com.ioclearn.service.HelloService;
+import com.ioclearn.service.impl.HelloServiceImpl;
 
-import javax.jws.WebService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

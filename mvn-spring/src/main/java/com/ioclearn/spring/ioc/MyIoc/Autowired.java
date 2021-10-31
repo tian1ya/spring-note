@@ -1,4 +1,4 @@
-package com.learn.spring.ioc.MyIoc;
+package com.ioclearn.spring.ioc.MyIoc;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface Qualifier {
+public @interface Autowired {
     String value() default "";
 }

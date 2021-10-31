@@ -1,6 +1,6 @@
-package com.learn.dao.impl;
+package com.ioclearn.dao.impl;
 
-import com.learn.dao.HelloDao;
+import com.ioclearn.dao.HelloDao;
 
 import java.util.Arrays;
 import java.util.List;

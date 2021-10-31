@@ -1,8 +1,4 @@
-package com.learn.factory;
-
-import com.learn.dao.HelloDao;
-import com.learn.dao.impl.HelloDaoImpl;
-import com.learn.dao.impl.HelloDaoImpl2;
+package com.ioclearn.factory;
 
 import java.io.IOException;
 import java.util.HashMap;

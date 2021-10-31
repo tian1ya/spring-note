@@ -1,8 +1,8 @@
-package com.learn;
+package com.ioclearn;
 
-import com.learn.spring.ioc.MyIoc.MySpringIoc;
-import com.learn.spring.ioc.entity.Account;
-import com.learn.spring.ioc.entity.Order;
+import com.ioclearn.spring.ioc.MyIoc.MySpringIoc;
+import com.ioclearn.spring.ioc.entity.Account;
+import com.ioclearn.spring.ioc.entity.Order;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

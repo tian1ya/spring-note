@@ -1,8 +1,8 @@
-package com.learn.spring.ioc.entity;
+package com.ioclearn.spring.ioc.entity;
 
 
-import com.learn.spring.ioc.MyIoc.Component;
-import com.learn.spring.ioc.MyIoc.Value;
+import com.ioclearn.spring.ioc.MyIoc.Component;
+import com.ioclearn.spring.ioc.MyIoc.Value;
 
 @Component("myOrder")
 public class Order {

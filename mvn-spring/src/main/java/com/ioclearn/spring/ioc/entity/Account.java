@@ -1,10 +1,10 @@
-package com.learn.spring.ioc.entity;
+package com.ioclearn.spring.ioc.entity;
 
 
-import com.learn.spring.ioc.MyIoc.Autowired;
-import com.learn.spring.ioc.MyIoc.Component;
-import com.learn.spring.ioc.MyIoc.Qualifier;
-import com.learn.spring.ioc.MyIoc.Value;
+import com.ioclearn.spring.ioc.MyIoc.Autowired;
+import com.ioclearn.spring.ioc.MyIoc.Component;
+import com.ioclearn.spring.ioc.MyIoc.Qualifier;
+import com.ioclearn.spring.ioc.MyIoc.Value;
 
 @Component("account")
 public class Account {

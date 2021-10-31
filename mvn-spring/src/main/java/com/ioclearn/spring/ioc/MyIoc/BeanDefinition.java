@@ -1,4 +1,4 @@
-package com.learn.spring.ioc.MyIoc;
+package com.ioclearn.spring.ioc.MyIoc;
 
 public class BeanDefinition {
     public BeanDefinition(String beanName, Class beanClz) {

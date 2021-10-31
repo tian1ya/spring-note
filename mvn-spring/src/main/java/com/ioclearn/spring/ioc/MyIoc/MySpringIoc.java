@@ -1,4 +1,4 @@
-package com.learn.spring.ioc.MyIoc;
+package com.ioclearn.spring.ioc.MyIoc;
 
 
 import java.io.File;

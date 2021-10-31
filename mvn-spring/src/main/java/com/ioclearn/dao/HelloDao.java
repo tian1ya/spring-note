@@ -1,4 +1,4 @@
-package com.learn.dao;
+package com.ioclearn.dao;
 
 import java.util.List;
 
