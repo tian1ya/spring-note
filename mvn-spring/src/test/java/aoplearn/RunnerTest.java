@@ -16,7 +16,7 @@ public class RunnerTest {
     @Autowired
     private ProductService productService;
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void testInsert() {
         CurrentUserHolder.set("Tom");
         productService.delete(1L);
