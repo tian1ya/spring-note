@@ -27,4 +27,11 @@ public class RunnerTest {
         CurrentUserHolder.set("admin");
         productService.delete(1L);
     }
+
+
+    @Test
+    public void adminInsert2() {
+        CurrentUserHolder.set("admin");
+        productService.delete2(1L);
+    }
 }

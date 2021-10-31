@@ -11,13 +11,18 @@ public class ProductService {
     @Autowired
     private AuthService authService;
 
-//    @AdminOnly
+    @AdminOnly
     public void insert(Product product) {
         System.out.println("insert product");
     }
 
-//    @AdminOnly
+    @AdminOnly
     public void delete(Long id) {
         System.out.println("delete product");
+    }
+
+    public String delete2(Long id) {
+        System.out.println("delete delete2");
+        return "delete2delete2$$$";
     }
 }
